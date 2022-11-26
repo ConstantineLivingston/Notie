@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "lazyhelper",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ConstantineLivingston/LazyHelper.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "f20f0e38baed373daf592bf290307ee298d5f695"
+      }
+    }
+  ],
+  "version" : 2
+}
