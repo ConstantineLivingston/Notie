@@ -35,7 +35,6 @@ final class NoteViewController: UIViewController {
         if note.text?.isEmpty ?? true {
             textView.becomeFirstResponder()
         }
-        
     }
     
     func observeKeyboardNotification() {
@@ -90,7 +89,7 @@ final class NoteViewController: UIViewController {
     }
     
     private func constrainViews() {
-        view.addConstrainedSubview(textView)
+        view.addConstrainedSubviews(textView)
         
         NSLayoutConstraint.activate([
             textView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -108,13 +107,12 @@ final class NoteViewController: UIViewController {
         note.lastUpdated = Date()
         storageManager.saveContext()
     }
-
 }
 
 extension NoteViewController {
     @objc func shareNote() {
-        guard
-            let text = textView.text, !text.isEmpty
+        guard let text = textView.text,
+              !text.isEmpty
         else {
             showError(title: "Note is empty",
                       message: "You cannot share an empty note")
