@@ -14,7 +14,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        let startVC = NoteListViewController(storageManager: CoreDataManager.shared, style: .insetGrouped)
+        let startVC = NoteListViewController(storageManager: CoreDataManager.shared,
+                                             style: .insetGrouped)
         window?.rootViewController = UINavigationController(rootViewController: startVC)
         window?.makeKeyAndVisible()
     }

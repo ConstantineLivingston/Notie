@@ -18,7 +18,7 @@ extension NoteListViewController {
     }
     
     private func cellProviderHandler(tableView: UITableView,
-                             indexPath: IndexPath,
+                                     indexPath: IndexPath,
                                      id: NSManagedObjectID) -> UITableViewCell? {
         let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.reuseIdentifier,
                                                  for: indexPath)
@@ -30,7 +30,9 @@ extension NoteListViewController {
     private func cellConfiguration(for cell: UITableViewCell,
                                    with ObjectID: NSManagedObjectID) -> UIContentConfiguration {
         guard
-            let managedObject = try? fetchedResultsController.managedObjectContext.existingObject(with: ObjectID)
+            let managedObject = try? fetchedResultsController
+                .managedObjectContext
+                .existingObject(with: ObjectID)
         else { fatalError("Managed object should be available") }
         
         guard

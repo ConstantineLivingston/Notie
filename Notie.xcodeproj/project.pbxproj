@@ -89,10 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				AD933415292BD20F008225AF /* CoreDataManager.swift */,
-				AD933402292BD02A008225AF /* Notie.xcdatamodeld */,
-				AD93347D292D0F67008225AF /* Note+CoreDataClass.swift */,
-				AD93347E292D0F67008225AF /* Note+CoreDataProperties.swift */,
-				AD0EACFA292E181000AE3101 /* Date+Notie.swift */,
+				AD9648AA293751E500A8D7B5 /* Models */,
 			);
 			path = StorageManager;
 			sourceTree = "<group>";
@@ -119,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				AD22DCC2293654FB0066C3B8 /* UIViewController+Error.swift */,
+				AD0EACFA292E181000AE3101 /* Date+Notie.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -151,6 +149,16 @@
 				AD9333F7292BCFE7008225AF /* Info.plist */,
 			);
 			path = Notie;
+			sourceTree = "<group>";
+		};
+		AD9648AA293751E500A8D7B5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AD933402292BD02A008225AF /* Notie.xcdatamodeld */,
+				AD93347D292D0F67008225AF /* Note+CoreDataClass.swift */,
+				AD93347E292D0F67008225AF /* Note+CoreDataProperties.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

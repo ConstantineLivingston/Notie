@@ -13,6 +13,7 @@ final class NoteViewController: UIViewController {
     private let textView = UITextView()
     private var doneButton: UIBarButtonItem!
     private var shareButton: UIBarButtonItem!
+    
     let storageManager: CoreDataManager
     var note: Note
     
@@ -68,6 +69,7 @@ final class NoteViewController: UIViewController {
     
     private func configureViews() {
         view.backgroundColor = .white
+        
         textView.text = note.text
         textView.font = UIFont.systemFont(ofSize: 20)
         textView.delegate = self
@@ -79,11 +81,11 @@ final class NoteViewController: UIViewController {
     
     private func configureNavigationItem() {
         shareButton = UIBarButtonItem(barButtonSystemItem: .action,
-                                          target: self,
-                                          action: #selector(shareNote))
+                                      target: self,
+                                      action: #selector(shareNote))
         doneButton = UIBarButtonItem(barButtonSystemItem: .done,
-                                         target: self,
-                                         action: #selector(dismissKeyboard))
+                                     target: self,
+                                     action: #selector(dismissKeyboard))
         navigationItem.rightBarButtonItems = [shareButton]
     }
     
@@ -114,11 +116,13 @@ extension NoteViewController {
         guard
             let text = textView.text, !text.isEmpty
         else {
-            showError(title: "Note is empty", message: "You cannot share an empty note")
+            showError(title: "Note is empty",
+                      message: "You cannot share an empty note")
             return
         }
         
-        let activityVC = UIActivityViewController(activityItems: [text], applicationActivities: nil)
+        let activityVC = UIActivityViewController(activityItems: [text],
+                                                  applicationActivities: nil)
         activityVC.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         present(activityVC, animated: true)
     }
