@@ -8,10 +8,6 @@
 import Foundation
 import CoreData
 
-protocol Storagable {
-    
-}
-
 class CoreDataManager {
     static let shared = CoreDataManager(modelName: "Notie")
     
@@ -27,7 +23,6 @@ class CoreDataManager {
     func load(completion: (() -> Void)? = nil) {
         persistentContainer.loadPersistentStores { description, error in
             guard error == nil else { fatalError(error!.localizedDescription) }
-            
             completion?()
         }
     }
@@ -48,7 +43,7 @@ class CoreDataManager {
         fetchRequest.sortDescriptors = [sortDescriptor]
         
         if let filter = filter {
-            let predicate = NSPredicate(format: "title contains[cd] %@", filter)
+            let predicate = NSPredicate(format: "text contains[cd] %@", filter)
             fetchRequest.predicate = predicate
         }
         
@@ -69,7 +64,6 @@ class CoreDataManager {
 extension CoreDataManager {
     func createNote() -> Note  {
         let note = Note(context: context)
-        note.text = ""
         note.lastUpdated = Date()
         self.saveContext()
         return note

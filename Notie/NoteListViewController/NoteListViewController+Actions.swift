@@ -8,7 +8,7 @@
 import UIKit
 
 extension NoteListViewController {
-    @objc func didTapAddNoteButton(_ sender: UIButton) {
+    @objc func didTapAddNoteButton(_ sender: UIBarButtonItem) {
         let note = storageManager.createNote()
         goToEditNote(with: note)
     }

@@ -15,7 +15,6 @@ extension NoteListViewController {
     func setupDataSource() {
         dataSource = DataSource(tableView: tableView,
                                 cellProvider: cellProviderHandler)
-        
     }
     
     private func cellProviderHandler(tableView: UITableView,
@@ -41,10 +40,11 @@ extension NoteListViewController {
         var contentConfiguration = cell.defaultContentConfiguration()
         contentConfiguration.text = note.title
         contentConfiguration.textProperties.font = UIFont.preferredFont(forTextStyle: .headline)
+        contentConfiguration.textProperties.numberOfLines = 1
         contentConfiguration.secondaryText = note.desc
         contentConfiguration.secondaryTextProperties.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        contentConfiguration.secondaryTextProperties.numberOfLines = 1
         contentConfiguration.secondaryTextProperties.color = .gray
-
         return contentConfiguration
     }
     

@@ -14,13 +14,13 @@ public class Note: NSManagedObject {
     var title: String {
         let lines = text?.trimmingCharacters(in: .whitespacesAndNewlines)
             .components(separatedBy: .newlines)
-        return lines?.first ?? ""
+        return lines?.first ?? "Text Title"
     }
     
     var desc: String {
         var text = text?.trimmingCharacters(in: .whitespacesAndNewlines)
             .components(separatedBy: .newlines)
         text?.removeFirst()
-        return "\(lastUpdated?.creationDate() ?? "") \(text?.first ?? "")"
+        return "\(lastUpdated?.creationDate() ?? "") \(text?.first ?? "No additional text")"
     }
 }

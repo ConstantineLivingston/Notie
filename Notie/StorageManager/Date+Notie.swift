@@ -14,7 +14,7 @@ extension Date {
             formatter.dateFormat = "h:mm a"
             
         } else {
-            formatter.dateFormat = "dd/MM/yy"
+            formatter.dateFormat = "dd.MM.yyyy"
         }
         return formatter.string(from: self)
     }

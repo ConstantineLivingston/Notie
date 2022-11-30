@@ -15,6 +15,8 @@
 		AD0EAD01292E1FC800AE3101 /* LazyHelper in Frameworks */ = {isa = PBXBuildFile; productRef = AD0EAD00292E1FC800AE3101 /* LazyHelper */; };
 		AD0EAD03292E40ED00AE3101 /* NoteListViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0EAD02292E40ED00AE3101 /* NoteListViewController+Actions.swift */; };
 		AD0EAD05292E491400AE3101 /* NoteViewController+TextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0EAD04292E491400AE3101 /* NoteViewController+TextViewDelegate.swift */; };
+		AD22DCBE293635860066C3B8 /* NoteListViewController+SearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD22DCBD293635850066C3B8 /* NoteListViewController+SearchBarDelegate.swift */; };
+		AD22DCC3293654FB0066C3B8 /* UIViewController+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD22DCC2293654FB0066C3B8 /* UIViewController+Error.swift */; };
 		AD9333EA292BCFE6008225AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9333E9292BCFE6008225AF /* AppDelegate.swift */; };
 		AD9333EC292BCFE6008225AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9333EB292BCFE6008225AF /* SceneDelegate.swift */; };
 		AD9333EE292BCFE6008225AF /* NoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9333ED292BCFE6008225AF /* NoteListViewController.swift */; };
@@ -34,6 +36,8 @@
 		AD0EACFD292E1E3B00AE3101 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		AD0EAD02292E40ED00AE3101 /* NoteListViewController+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteListViewController+Actions.swift"; sourceTree = "<group>"; };
 		AD0EAD04292E491400AE3101 /* NoteViewController+TextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteViewController+TextViewDelegate.swift"; sourceTree = "<group>"; };
+		AD22DCBD293635850066C3B8 /* NoteListViewController+SearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteListViewController+SearchBarDelegate.swift"; sourceTree = "<group>"; };
+		AD22DCC2293654FB0066C3B8 /* UIViewController+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Error.swift"; sourceTree = "<group>"; };
 		AD9333E6292BCFE6008225AF /* Notie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD9333E9292BCFE6008225AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD9333EB292BCFE6008225AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +71,7 @@
 				AD0EACEF292D40D300AE3101 /* NoteListViewController+DataSource.swift */,
 				AD0EACF3292D52FA00AE3101 /* NoteListViewController+TableViewDelegate.swift */,
 				AD0EAD02292E40ED00AE3101 /* NoteListViewController+Actions.swift */,
+				AD22DCBD293635850066C3B8 /* NoteListViewController+SearchBarDelegate.swift */,
 			);
 			path = NoteListViewController;
 			sourceTree = "<group>";
@@ -110,6 +115,14 @@
 			path = NoteViewController;
 			sourceTree = "<group>";
 		};
+		AD22DCC1293654C10066C3B8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AD22DCC2293654FB0066C3B8 /* UIViewController+Error.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		AD9333DD292BCFE6008225AF = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +142,7 @@
 		AD9333E8292BCFE6008225AF /* Notie */ = {
 			isa = PBXGroup;
 			children = (
+				AD22DCC1293654C10066C3B8 /* Extensions */,
 				AD0EACF7292D7B6200AE3101 /* App */,
 				AD0EACF6292D7B4F00AE3101 /* NoteListViewController */,
 				AD0EACFC292E1E2A00AE3101 /* NoteViewController */,
@@ -223,6 +237,8 @@
 				AD9333EE292BCFE6008225AF /* NoteListViewController.swift in Sources */,
 				AD9333EA292BCFE6008225AF /* AppDelegate.swift in Sources */,
 				AD0EACFB292E181000AE3101 /* Date+Notie.swift in Sources */,
+				AD22DCBE293635860066C3B8 /* NoteListViewController+SearchBarDelegate.swift in Sources */,
+				AD22DCC3293654FB0066C3B8 /* UIViewController+Error.swift in Sources */,
 				AD93347F292D0F67008225AF /* Note+CoreDataClass.swift in Sources */,
 				AD9333EC292BCFE6008225AF /* SceneDelegate.swift in Sources */,
 				AD0EAD03292E40ED00AE3101 /* NoteListViewController+Actions.swift in Sources */,
@@ -379,7 +395,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.Notie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.NotieOrMyNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -406,7 +422,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.Notie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.NotieOrMyNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
