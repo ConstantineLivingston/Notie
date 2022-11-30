@@ -54,11 +54,13 @@ final class NoteViewController: UIViewController {
     }
     
     @objc private func showDoneButton() {
-        navigationItem.rightBarButtonItems = [doneButton, shareButton]
+        navigationItem.setRightBarButtonItems([doneButton, shareButton],
+                                              animated: false)
     }
     
     @objc private func hideDoneButton() {
-        navigationItem.rightBarButtonItems = [shareButton]
+        navigationItem.setRightBarButtonItems([shareButton],
+                                              animated: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {
