@@ -28,8 +28,9 @@ final class NoteListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
-        setupSearchController()
         setupNavigationItem()
+        setupSearchController()
+        setupToolBarItems()
         setupDataSource()
         setupFetchedResultsController()
     }
@@ -49,7 +50,6 @@ final class NoteListViewController: UITableViewController {
         view.backgroundColor = .secondarySystemBackground
         configureTableView()
         configureNotesCountLabel()
-        setupToolBarItems()
     }
         
     func refreshNotesCountLabel() {
@@ -66,7 +66,6 @@ final class NoteListViewController: UITableViewController {
     func setupFetchedResultsController(filter: String? = nil) {
         fetchedResultsController = storageManager.createFetchedResultsController(filter: filter)
         fetchedResultsController.delegate = self
-    
         do {
             try fetchedResultsController.performFetch()
         } catch {
@@ -107,8 +106,6 @@ final class NoteListViewController: UITableViewController {
     private func configureTableView() {
         tableView.register(UITableViewCell.self,
                            forCellReuseIdentifier: UITableViewCell.reuseIdentifier)
-        tableView.dataSource = dataSource
-        tableView.delegate = self
     }
 }
 
