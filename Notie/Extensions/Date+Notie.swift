@@ -12,7 +12,6 @@ extension Date {
         let formatter = DateFormatter()
         if Locale.current.calendar.isDateInToday(self) {
             formatter.dateFormat = "h:mm a"
-            
         } else {
             formatter.dateFormat = "dd.MM.yyyy"
         }
